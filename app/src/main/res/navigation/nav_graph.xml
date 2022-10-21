@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/artistsListFragment">
+
+    <fragment
+        android:id="@+id/artistsListFragment"
+        android:name="com.example.swapchallenge.ui.artistslist.ArtistsListFragment"
+        android:label="ArtistsFragment"
+        tools:layout="@layout/fragment_artists">
+        <action
+            android:id="@+id/action_artistsListFragment_to_artistDetailsFragment"
+            app:destination="@id/artistDetailsFragment"
+            app:enterAnim="@android:anim/fade_in"
+            app:exitAnim="@android:anim/fade_out" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/artistDetailsFragment"
+        android:name="com.example.swapchallenge.ui.artistdetails.ArtistDetailsFragment"
+        android:label="ArtistDetailsFragment"
+        tools:layout="@layout/artist_details_fragment">
+        <argument
+            android:name="artistId"
+            app:argType="string" />
+    </fragment>
+
+
+</navigation>

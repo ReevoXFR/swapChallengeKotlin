@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">swapchallenge</string>
+    <string name="oh_no">Oh no… Something went wrong.</string>
+    <string name="hint_no_name">No name available</string>
+    <string name="hint_artist_name">Type your artist name here :)</string>
+    <string name="hint_no_connectivity">You are offline! Please turn on Wifi / Data.</string>
+    <string name="cd_no_data_found">Image of no_data_found</string>
+    <string name="cd_artist_image">Artist image</string>
+</resources>

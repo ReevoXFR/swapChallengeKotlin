@@ -1,0 +1,19 @@
+query Artists($name: String!, $cursor: String) {
+  search {
+    artists(query: $name, first: 15, after: $cursor) {
+      nodes {
+        ...ArtistBasicFragment
+      }
+      edges {
+       cursor
+      }
+    }
+  }
+}
+
+fragment ArtistBasicFragment on Artist {
+  id
+  name
+  type
+  disambiguation
+}

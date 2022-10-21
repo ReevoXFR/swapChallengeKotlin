@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <import type="com.google.android.material.tabs.TabLayout" />
+
+        <variable
+            name="viewModel"
+            type="com.example.swapchallenge.ui.artistslist.ArtistsFragmentViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@color/colorPrimary"
+            android:title="@string/app_name"
+            android:titleTextColor="@android:color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/search_bar"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:elevation="@dimen/default_elevation"
+            android:hint="@string/hint_artist_name"
+            app:endIconDrawable="@drawable/ic_search"
+            app:endIconMode="custom"
+            android:inputType="text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/default_edit_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:paddingStart="20dp"
+                android:inputType="text"
+                android:paddingTop="20dp"
+                android:paddingEnd="20dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/artists_rv"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layoutAnimation="@anim/layout_animation"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/search_bar" />
+
+        <ImageView
+            android:id="@+id/no_data_found"
+            android:layout_width="300dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="64dp"
+            android:background="@drawable/shape_rounded"
+            android:elevation="10dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/no_data"
+            android:visibility="gone"
+            android:contentDescription="@string/cd_no_data_found"
+            app:layout_constraintEnd_toEndOf="@id/artists_rv"
+            app:layout_constraintStart_toStartOf="@id/artists_rv"
+            app:layout_constraintTop_toTopOf="@id/artists_rv" />
+
+        <TextView
+            android:id="@+id/error"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="64dp"
+            android:text="@string/oh_no"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/artists_rv"
+            app:layout_constraintStart_toStartOf="@id/artists_rv"
+            app:layout_constraintTop_toTopOf="@id/artists_rv" />
+
+        <ProgressBar
+            android:id="@+id/loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

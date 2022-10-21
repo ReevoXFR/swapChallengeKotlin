@@ -1,0 +1,15 @@
+query Artist($nodeId: ID!) {
+  node(id: $nodeId) {
+    ...ArtistDetailsFragment
+  }
+}
+
+fragment ArtistDetailsFragment on Artist {
+  id
+  name
+  disambiguation
+  rating {
+    value
+    voteCount
+  }
+}
