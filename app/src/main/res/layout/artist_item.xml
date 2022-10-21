@@ -49,7 +49,7 @@
             app:layout_constraintStart_toEndOf="@+id/artist_pic"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_chainStyle="packed"
-            tools:text="Launch Site #1" />
+            tools:text="ArtistName #1" />
 
         <TextView
             android:id="@+id/location"
@@ -68,6 +68,6 @@
             app:layout_constraintStart_toEndOf="@id/artist_pic"
             app:layout_constraintTop_toBottomOf="@id/artist_name"
             app:layout_constraintVertical_chainStyle="packed"
-            tools:text="Launch Site #1" />
+            tools:text="ArtistLocation #1" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
